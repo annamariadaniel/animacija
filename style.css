@@ -1,0 +1,69 @@
+body {
+  background-color: #050210;
+}
+
+.circle {
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: my-animation 0.8s linear infinite;
+}
+
+.circle::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  border-radius: 50%;
+  background-color: #08041C;
+}
+
+.circle span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+}
+
+.circle span:nth-child(1) {
+  filter: blur(40px);
+}
+
+.circle span:nth-child(2) {
+  filter: blur(40px);
+}
+
+.circle span:nth-child(3) {
+  filter: blur(20px);
+}
+
+.circle span:nth-child(4) {
+  background: #100D24;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  transform: scale(0.1, 0.1);
+  animation: second-animation 1.1s linear infinite;
+}
+
+@keyframes my-animation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes second-animation {
+  100% {
+    transform: scale(0.8, 0.8);
+  }
+}
